@@ -7,11 +7,13 @@
 }
 
 .user {
-  margin: 17px 15px;
+  margin: 17px 75px;
+  font-weight: 600;
 }
 
 .login {
-  margin: 5px 100px;
+  margin: 17px 100px;
+  font-weight: 600;
 }
 
 .container {
@@ -30,4 +32,27 @@
   display: flex;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   justify-content: center;
+}
+
+.title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin: 15px 0;
+  font-size: 40px;
+  color: rgb(165, 163, 163);
+  font-weight: 700;
+}
+
+.subtitle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 17px;
+  color: rgb(165, 163, 163);
+  font-weight: 700;
+}
+
+.span {
+  color: black;
+  border-bottom: 2px solid black;
 }

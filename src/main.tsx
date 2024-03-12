@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
+import Calendar from './pages/CalendarPage/CalendarPage.tsx';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,10 +13,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App/>,
   },
-  // {
-  //   path: "/calendar",
-  //   element: </>,
-  // },
+  {
+    path: "/calendar",
+    element: <Calendar/>,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

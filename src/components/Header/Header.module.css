@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background: rgb(204, 204, 204);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.user {
+  margin: 17px 75px;
+  font-weight: 600;
+}

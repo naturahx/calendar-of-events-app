@@ -5,12 +5,16 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
-import "./App.css";
-import { Box, Button, FormControl, TextField } from "@mui/material";
+import { Box, FormControl, TextField } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
+import { Link } from "react-router-dom";
+import "./App.css";
 
 const App = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [log, setLog] = useState(false);
+  const [value, setValue] = useState("");
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -18,7 +22,6 @@ const App = () => {
     event.preventDefault();
   };
 
-  const [loading, setLoading] = useState(false);
   function handleClick() {
     setLoading(true);
   }
@@ -26,59 +29,78 @@ const App = () => {
   return (
     <>
       <header className="header">
-        <div className="user">FRFR</div>
-        <button className="login">Login</button>
+        {loading ? (
+          <div className="user">{value}</div>
+        ) : (
+          <button className="login" onClick={() => setLog(true)}>
+            Login
+          </button>
+        )}
       </header>
-      <div className="container">
-        <div className="form">
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              m: 13,
-            }}
-          >
-            <TextField
-              sx={{ m: 1, width: "50ch" }}
-              id="outlined-basic"
-              label="Name"
-              variant="outlined"
-            />
-            <FormControl sx={{ m: 1, width: "50ch" }} variant="outlined">
-              <InputLabel htmlFor="outlined-adornment-password">
-                Password
-              </InputLabel>
-              <OutlinedInput
-                id="outlined-adornment-password"
-                type={showPassword ? "text" : "password"}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                      edge="end"
-                    >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-                label="Password"
-              />
-            </FormControl>
-            <LoadingButton
-              onClick={handleClick}
-              loading={loading}
-              loadingIndicator="Loading…"
-              variant="outlined"
-              sx={{ width: "200px", m: 2 }}
+      {log ? (
+        <div className="container">
+          <div className="form">
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                m: 13,
+              }}
             >
-              <span>Sign in</span>
-            </LoadingButton>
-          </Box>
+              <TextField
+                sx={{ m: 1, width: "50ch" }}
+                id="outlined-basic"
+                label="Name"
+                variant="outlined"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+              />
+              <FormControl sx={{ m: 1, width: "50ch" }} variant="outlined">
+                <InputLabel htmlFor="outlined-adornment-password">
+                  Password
+                </InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-password"
+                  type={showPassword ? "text" : "password"}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="Password"
+                />
+              </FormControl>
+              <LoadingButton
+                onClick={handleClick}
+                loading={loading}
+                loadingIndicator="Loading…"
+                variant="outlined"
+                sx={{ width: "200px", m: 2 }}
+              >
+                <Link to="/calendar">
+                  <span>Sign in</span>
+                </Link>
+              </LoadingButton>
+            </Box>
+          </div>
         </div>
-      </div>
+      ) : (
+        <>
+          <h1 className="title">Welcome to calendar!</h1>
+          <h3 className="subtitle">
+            Click <span className="span">Login</span> and start planning events
+            today!
+          </h3>
+        </>
+      )}
     </>
   );
 };
