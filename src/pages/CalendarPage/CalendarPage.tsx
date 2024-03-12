@@ -30,7 +30,7 @@ const Calendar = () => {
 
   return (
     <>
-    <Header />
+    <Header value={'f3ef'}/>
       <div className={styles.calendar}>
         <div className={styles.month}>
           <button onClick={prevMonth}>{"<"}</button>

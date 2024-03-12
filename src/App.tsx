@@ -9,6 +9,7 @@ import { Box, FormControl, TextField } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import { Link } from "react-router-dom";
 import "./App.css";
+import Header from "./components/Header/Header";
 
 const App = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -30,10 +31,10 @@ const App = () => {
     <>
       <header className="header">
         {loading ? (
-          <div className="user">{value}</div>
+          <Header value={value}/>
         ) : (
           <button className="login" onClick={() => setLog(true)}>
-            Login
+            LOGIN
           </button>
         )}
       </header>
@@ -96,7 +97,7 @@ const App = () => {
         <>
           <h1 className="title">Welcome to calendar!</h1>
           <h3 className="subtitle">
-            Click <span className="span">Login</span> and start planning events
+            Click <span className="span">LOGIN</span> and start planning events
             today!
           </h3>
         </>

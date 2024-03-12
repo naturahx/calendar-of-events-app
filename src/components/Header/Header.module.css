@@ -10,3 +10,18 @@
   margin: 17px 75px;
   font-weight: 600;
 }
+
+.out {
+  margin: 10px 75px;
+  font-weight: 600;
+  color: black;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 0.19s;
+}
+
+.out:hover {
+  color: rgb(201, 42, 42);
+  border: 2px solid rgb(201, 42, 42);
+}
