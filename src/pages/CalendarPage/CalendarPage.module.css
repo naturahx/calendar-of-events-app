@@ -1,0 +1,33 @@
+.calendar {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-width: 300px;
+}
+
+.month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.month button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
+}
+
+.day {
+  padding: 5px;
+  text-align: center;
+}
+
+.day:hover {
+  background-color: #eee;
+}
