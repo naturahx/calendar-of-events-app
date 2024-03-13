@@ -1,33 +1,54 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
 .calendar {
-  font-family: Arial, sans-serif;
-  border: 1px solid #ccc;
   padding: 10px;
-  max-width: 300px;
+  width: 800px; /* Ширина формы */
+  height: 600px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .month {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 15px 0;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .month button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 5px;
+  grid-gap: 75px;
+  margin-top: 35px;
 }
 
 .day {
-  padding: 5px;
   text-align: center;
 }
 
 .day:hover {
   background-color: #eee;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 }

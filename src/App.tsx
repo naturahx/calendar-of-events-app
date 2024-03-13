@@ -31,7 +31,7 @@ const App = () => {
     <>
       <header className="header">
         {loading ? (
-          <Header value={value}/>
+          <Header value={value} />
         ) : (
           <button className="login" onClick={() => setLog(true)}>
             LOGIN
@@ -46,9 +46,10 @@ const App = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                m: 13,
+                m: 10,
               }}
             >
+              <h1 className="titleAuth">Authorazation</h1>
               <TextField
                 sx={{ m: 1, width: "50ch" }}
                 id="outlined-basic"

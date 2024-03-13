@@ -56,3 +56,12 @@
   color: black;
   border-bottom: 2px solid black;
 }
+
+.titleAuth {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin: 15px 0;
+  font-size: 20px;
+  color: rgb(165, 163, 163);
+  font-weight: 700;
+}
